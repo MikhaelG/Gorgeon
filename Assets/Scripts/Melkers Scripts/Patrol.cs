@@ -7,6 +7,10 @@ public class Patrol : MonoBehaviour
     public float speed;
     public float distance;
 
+    public GameObject bullet;
+    public GameObject bulletParent;
+    public GameObject bulletParent2;
+
     private bool movingRight = true; //Jag berättar vad enemyn ska göra när den kommer till kanten av en platform
 
     public Transform groundDetection;
@@ -29,11 +33,15 @@ public class Patrol : MonoBehaviour
                 movingRight = true;
             }
         }
+
+        ShootAtAngle();
+
     }
 
-    public void ShootAngle ()
+    public void ShootAtAngle ()
     {
-
+        Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+        Instantiate(bullet, bulletParent2.transform.position, Quaternion.identity);
     }
 
 }

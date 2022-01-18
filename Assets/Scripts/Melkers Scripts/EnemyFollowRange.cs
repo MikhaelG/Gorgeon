@@ -29,7 +29,7 @@ public class EnemyFollowRange : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime); //Rör sig mot spelaren med en viss hastighet
         }
-        else if (distanceFromPlayer<shootingRange && nextFireTime <Time.time)//Om spelaren är innanför shootingRange och 
+        else if (distanceFromPlayer<shootingRange && nextFireTime <Time.time)//Om spelaren är innanför shootingRange
         {
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);//Skapar en bullet vid bulletParent. Ingen rotation
             nextFireTime = Time.time + fireRate;//Hur ofta enemyn kan skjuta
