@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &92671661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b82d6f09a58ed44e881a830c7b33ddc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92e2ec9b1626d36459d5f5dc43604a3f, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1922,6 +1922,8 @@ MonoBehaviour:
   rb: {fileID: 8128276807141840373}
   feet: {fileID: 8128276807265448098}
   dashDistance: 15
+  jumpClip: {fileID: 8300000, guid: 6f88c0b4646f9824abdc1d8965dadbe6, type: 3}
+  walkingClip: {fileID: 8300000, guid: e0a47f50443418e4da945339c46ecfc4, type: 3}
 --- !u!23 &8128276807141840378
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1985,6 +1987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1063185456}
   healthAmount: 3
+  deathClip: {fileID: 8300000, guid: 8703e5112b02bbf48af5f6bd214182e4, type: 3}
 --- !u!23 &8128276807203778624
 MeshRenderer:
   m_ObjectHideFlags: 0
