@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour
 
     public bool playerTooClose = false;
     public bool isConfused = false;
+    public bool cantTouchThis = true;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform; //Letar efter spelaren och dess transform värde. Melker
@@ -30,14 +31,16 @@ public class Boss : MonoBehaviour
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
             Shoot();
-            attacktime = 0;
             bossAttackAmount = + 1;
+            attacktime = 0;
+            
         }
 
         /*  if(lineofsite GameObject.FindGameObjectWithTag("Player") = true && isConfused == false)
            {
               // Animator.play attack animation
               //Punch player
+              
            }*/
 
         if (bossweakpoint == bossAttackAmount )
@@ -47,18 +50,22 @@ public class Boss : MonoBehaviour
 
         if(isConfused == true)
         {
-           // Animator.play cornfused animation
-           //Activate opportunity for player to attack
+            Debug.Log("I'm cornfused");
+            // Animator.play cornfused animation
+            //Activate opportunity for player to attack
         }
         else if (isConfused == false)
         {
             //Animator.play idle animation
             //make invulnarable again
         }
+
+        
     }
 
     void Shoot()
     {
+        
         int random = Random.Range(0, 3);
         if (random == 0)
         {

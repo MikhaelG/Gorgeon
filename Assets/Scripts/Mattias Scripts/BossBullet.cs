@@ -7,29 +7,18 @@ public class BossBullet : MonoBehaviour
     public int damage = 1;
 
     public float timer;
-    public float Deathcountdown = 10;
+    public float Deathcountdown = 15;
     void Start()
     {
         rb.velocity = transform.up * speed;
     }
 
-    private void Update()
+ void Update()
     {
-       /* timer += Time.deltaTime;
-        if (timer >= Deathcountdown)
-        {
-            Destroy(gameObject);       
-        }*/
+        Destroy(this.gameObject, 4);
+       
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        Boss Ramses = hitInfo.transform.GetComponent<Boss>();
-        if (Ramses != null)
-        {
-            Ramses.TakeDamage(damage);
-
-        }
-    }
+    
 }
 
