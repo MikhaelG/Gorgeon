@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 0094e7a663a9b304e85ae161a5cd5d48
+guid: 4451a12fb639c3a4aa19570897a5e99e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4474003058232387615
+    second: "L\xF6k d\xF6d-_0"
+  - first:
+      213: -2454753758918048481
+    second: "L\xF6k d\xF6d-_1"
+  - first:
+      213: -1057207545877500367
+    second: "L\xF6k d\xF6d-_2"
+  - first:
+      213: -3439757586738696736
+    second: "L\xF6k d\xF6d-_3"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +53,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 65
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,7 +113,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "L\xF6k d\xF6d-_0"
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 163
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e71c0e3ce529e1c0800000000000000
+      internalID: -4474003058232387615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "L\xF6k d\xF6d-_1"
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 163
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1582ac4676feedd0800000000000000
+      internalID: -2454753758918048481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "L\xF6k d\xF6d-_2"
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 35
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13eeb1e965b0451f0800000000000000
+      internalID: -1057207545877500367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "L\xF6k d\xF6d-_3"
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 35
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed2cf013b68340d0800000000000000
+      internalID: -3439757586738696736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

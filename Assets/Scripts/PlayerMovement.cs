@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
 
     float dashCoolDown;
 
+    public AudioClip jumpClip;//Melker
+
+    public AudioClip walkingClip;//Melker
+
     private void Update()
     {
         mx = Input.GetAxis("Horizontal");
@@ -33,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            AudioSource.PlayClipAtPoint(jumpClip, transform.position);//Melker
             Jump();
         }
 
@@ -70,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         CheckGrounded();
     }
 
-
+   
 
 
     private void FixedUpdate()

@@ -8,11 +8,13 @@ public class HealthTest : MonoBehaviour
     public Image healthBar;
     public float healthAmount = 3;
 
-    // Update is called once per frame
+    public AudioClip deathClip;
+
     void Update()
     {
         if (healthAmount <= 0)
         {
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
             Destroy(this.gameObject);
         }
 
