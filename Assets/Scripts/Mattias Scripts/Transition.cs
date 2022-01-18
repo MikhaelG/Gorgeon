@@ -10,9 +10,9 @@ public class Transition : MonoBehaviour
     public GameObject player;
 
 
-    private void Start()
+    private void Update()
     {
-     //   player.
+     
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +20,7 @@ public class Transition : MonoBehaviour
         {
             Camera.main.transform.position = camPoint.transform.position;
             currentRoom.SetActive(true);
-            //player.transform.position = Vector2(currentlocation + 1, 0);
+            player.transform.position = player.transform.position + new Vector3(2, 0,0);
             formerRoom.SetActive(false);
         }
     }
