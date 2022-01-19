@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &92671661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2138,7 +2138,7 @@ MonoBehaviour:
   feet: {fileID: 8128276807265448098}
   dashDistance: 15
   jumpClip: {fileID: 8300000, guid: 6f88c0b4646f9824abdc1d8965dadbe6, type: 3}
-  walkingClip: {fileID: 8300000, guid: e0a47f50443418e4da945339c46ecfc4, type: 3}
+  walkingClip: {fileID: 8300000, guid: 89511b7cd48efd34b9dc095ddd8499f3, type: 3}
 --- !u!23 &8128276807141840378
 MeshRenderer:
   m_ObjectHideFlags: 0
