@@ -18,6 +18,9 @@ public class Patrol : MonoBehaviour
 
     public Transform groundDetection;
 
+    public float hp = 2;
+    
+
     void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime); //Nu kommer den att gå åt höger
