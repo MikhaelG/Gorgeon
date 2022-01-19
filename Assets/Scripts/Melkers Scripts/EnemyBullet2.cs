@@ -12,6 +12,6 @@ public class EnemyBullet2 : MonoBehaviour
     {
         bulletRD = GetComponent<Rigidbody2D>();
         //bulletRD.velocity = new Vector2(moveDire.x, moveDire.y);
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, 7);
     }
 }
