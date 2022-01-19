@@ -55,5 +55,14 @@ public class Patrol : MonoBehaviour
             rightTear.AddForce(new Vector3(1, 1, 0) * 400);
         }
     }
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
 }

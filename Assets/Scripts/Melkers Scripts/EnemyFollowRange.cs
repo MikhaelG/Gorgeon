@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyFollowRange : MonoBehaviour
@@ -46,11 +44,11 @@ public class EnemyFollowRange : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        /* hp -= TakeDamage(damage)
-             if (hp <= 0)
-             {
-                 Destroy(gameObject);
-             }
-         }*/
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
