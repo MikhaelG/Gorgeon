@@ -1291,7 +1291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465213170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.205, y: 0, z: 0}
+  m_LocalPosition: {x: 0.33, y: 0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2017366448}
@@ -1583,7 +1583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839041095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.249, y: 0, z: 0}
+  m_LocalPosition: {x: -0.35, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2017366448}
@@ -1637,7 +1637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2017366447
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1720,9 +1720,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   distance: 2
-  bullet: {fileID: 0}
-  bulletParent: {fileID: 0}
-  bulletParent2: {fileID: 0}
+  bullet: {fileID: 7199790427256404102, guid: d9e1f5539bf264245a09e52890693c9e, type: 3}
+  bulletParentRight: {fileID: 1465213170}
+  bulletParentLeft: {fileID: 1839041095}
+  fireRate: 1
   groundDetection: {fileID: 1756849337}
 --- !u!1 &2079547204
 GameObject:
@@ -2072,7 +2073,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2201,7 +2202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1063185456}
-  healthAmount: 3
+  healthAmount: 10
   deathClip: {fileID: 8300000, guid: 8703e5112b02bbf48af5f6bd214182e4, type: 3}
 --- !u!23 &8128276807203778624
 MeshRenderer:
