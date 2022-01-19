@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607414374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.97, y: 0, z: 0}
   m_LocalScale: {x: 0.9331054, y: 0.9056301, z: 0.78125}
   m_Children: []
   m_Father: {fileID: 750782329}
@@ -369,7 +369,6 @@ GameObject:
   - component: {fileID: 750782327}
   - component: {fileID: 750782326}
   - component: {fileID: 750782325}
-  - component: {fileID: 750782324}
   m_Layer: 8
   m_Name: boss
   m_TagString: Boss
@@ -377,27 +376,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &750782324
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750782323}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
 --- !u!114 &750782325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750782323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.39, y: 0, z: 0}
+  m_LocalPosition: {x: 3.67, y: -1.68, z: 0}
   m_LocalScale: {x: 1.28, y: 3.2788498, z: 1.28}
   m_Children:
   - {fileID: 607414375}
@@ -548,7 +526,7 @@ PrefabInstance:
     - target: {fileID: 8128276806999330892, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: jumpClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6f88c0b4646f9824abdc1d8965dadbe6, type: 3}
+      objectReference: {fileID: 8300000, guid: a4b5fa8a0f760ef41a3722e5805c2c2a, type: 3}
     - target: {fileID: 8128276806999330892, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: walkingClip
       value: 
@@ -567,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8128276806999330893, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 8128276806999330893, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -656,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111377752}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.77, y: 0.316, z: 0}
   m_LocalScale: {x: 0.78125, y: 0.3049851, z: 0.78125}
   m_Children: []
   m_Father: {fileID: 750782329}
@@ -686,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137471422}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.78, y: 0, z: 0}
   m_LocalScale: {x: 0.7812501, y: 0.30498514, z: 0.78125}
   m_Children: []
   m_Father: {fileID: 750782329}
@@ -812,7 +790,7 @@ GameObject:
   - component: {fileID: 1336408241}
   - component: {fileID: 1336408240}
   - component: {fileID: 1336408239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438015397}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.79, y: -0.258, z: 0}
   m_LocalScale: {x: 0.7812501, y: 0.30498514, z: 0.78125}
   m_Children: []
   m_Father: {fileID: 750782329}
@@ -1097,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047532990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.22, y: -0.4, z: 10}
   m_LocalScale: {x: 4.802717, y: 3.7302656, z: 3.7302656}
   m_Children: []
   m_Father: {fileID: 0}
