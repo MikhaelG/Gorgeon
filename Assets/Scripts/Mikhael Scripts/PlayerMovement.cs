@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-            //AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
+            AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
 
             lastKeyCode = KeyCode.A;
         }
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-           
+            AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
 
             lastKeyCode = KeyCode.D;
 
