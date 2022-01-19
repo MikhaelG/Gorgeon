@@ -4,13 +4,17 @@ public class Boss : MonoBehaviour
 {
     public float attackcountdown = 3;
     public float attacktime;
+    public int damage = 1;
     public Transform FirePointT;
     public Transform FirePointM;
     public Transform FirePointB;
     public GameObject BossthrowPrefab;
 
+
     public float lineOfSite;
     public Transform player;
+    public Transform hitbox;
+    public LayerMask playerLayer;
 
     private float bossAttackAmount;
     public float BossHitPoints = 5;
@@ -31,41 +35,44 @@ public class Boss : MonoBehaviour
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
             Shoot();
-            bossAttackAmount = + 1;
+            bossAttackAmount = +1;
             attacktime = 0;
-            
+
         }
 
-        /*  if(lineofsite GameObject.FindGameObjectWithTag("Player") = true && isConfused == false)
-           {
-              // Animator.play attack animation
-              //Punch player
-              
-           }*/
+        /* if(lineofsite GameObject.FindGameObjectWithTag("Player") = true && isConfused == false)
+          {
+             // Animator.play attack animation
+             //Punch player
 
-        if (bossweakpoint == bossAttackAmount )
+          }*/
+
+
+        if (bossweakpoint == bossAttackAmount)
         {
             isConfused = true;
+            cantTouchThis = false;
         }
 
-        if(isConfused == true)
-        {
-            Debug.Log("I'm cornfused");
-            // Animator.play cornfused animation
-            //Activate opportunity for player to attack
-        }
-        else if (isConfused == false)
-        {
-            //Animator.play idle animation
-            //make invulnarable again
-        }
+    }
 
-        
+    public void Attack()
+    {
+        // animator.SetTrigger("Attack");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, lineOfSite, playerLayer);
+        foreach (Collider2D player in hitEnemies)
+        {
+            Debug.Log("We hit " + player.name);
+            HealthTest playerHealth = player.GetComponent<HealthTest>(); //Ersätt PlayerMovement med det skript som har take dammage funktionen
+            //Animator.play attack animation
+            playerHealth.TakeDamage(damage);
+            player.transform.position += new Vector3(-3, 0, 0);
+        }
     }
 
     void Shoot()
     {
-        
+
         int random = Random.Range(0, 3);
         if (random == 0)
         {
@@ -85,13 +92,18 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        BossHitPoints -= damage;
-        transform.position += new Vector3(5, 0, 0);
-        isConfused = false;
-        if (BossHitPoints <= 0)
+        if (isConfused == true)
         {
-            Destroy(gameObject);
+            BossHitPoints -= damage;
+            transform.position += new Vector3(5, 0, 0);
+            isConfused = false;
+            cantTouchThis = true;
+            if (BossHitPoints <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
+
     }
 
     public void OnDrawGizmosSelected()
