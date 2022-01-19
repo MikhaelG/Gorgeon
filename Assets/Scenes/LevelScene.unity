@@ -519,7 +519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218095960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: -2.73, z: 0}
+  m_LocalPosition: {x: -0.01, y: -2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1208,17 +1208,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackcountdown: 3
   attacktime: 0
-  damage: 1
   FirePointT: {fileID: 2113025124}
   FirePointM: {fileID: 1348612656}
   FirePointB: {fileID: 1411916877}
   BossthrowPrefab: {fileID: 7618587393589236526, guid: d9de87537eb933545b65cc15413a186e, type: 3}
   lineOfSite: 1.91
   player: {fileID: 1300442923}
-  hitbox: {fileID: 951175681}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
   BossHitPoints: 3
   bossweakpoint: 5
   playerTooClose: 0
@@ -9789,7 +9784,7 @@ PrefabInstance:
     - target: {fileID: 8128276806999330892, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: jumpClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6f88c0b4646f9824abdc1d8965dadbe6, type: 3}
+      objectReference: {fileID: 8300000, guid: a4b5fa8a0f760ef41a3722e5805c2c2a, type: 3}
     - target: {fileID: 8128276806999330892, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: walkingClip
       value: 

@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+//Mikhaels kod
+
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10f;
@@ -28,14 +30,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        mx = Input.GetAxis("Horizontal");
+        mx = Input.GetAxis("Horizontal"); //a d i det fallet
 
         if (dashCoolDown > 0)
         {
             dashCoolDown -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump")) //space
         {
             AudioSource.PlayClipAtPoint(jumpClip, transform.position);//Melker
             Jump();
