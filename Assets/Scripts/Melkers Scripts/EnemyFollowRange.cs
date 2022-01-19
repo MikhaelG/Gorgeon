@@ -15,6 +15,8 @@ public class EnemyFollowRange : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletParent;
 
+    public float hp = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +37,19 @@ public class EnemyFollowRange : MonoBehaviour
             nextFireTime = Time.time + fireRate;//Hur ofta enemyn kan skjuta
         }
     }
-
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, lineOfSite); //Skapar en cirkel runt om enemyn
         Gizmos.DrawWireSphere(transform.position, shootingRange); //Skapar en cirkel runt om enemyn
     }
-}
+
+    public void TakeDamage(int damage)
+    {
+        hp -= TakeDamage(damage)
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
