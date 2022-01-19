@@ -8,8 +8,11 @@ public class Patrol : MonoBehaviour
     public float distance;
 
     public GameObject bullet;
-    public GameObject bulletParent;
-    public GameObject bulletParent2;
+    public GameObject bulletParentRight;
+    public GameObject bulletParentLeft;
+
+    public float fireRate = 1f;
+    private float nextFireTime;
 
     private bool movingRight = true; //Jag berättar vad enemyn ska göra när den kommer till kanten av en platform
 
@@ -40,8 +43,14 @@ public class Patrol : MonoBehaviour
 
     public void ShootAtAngle ()
     {
-        Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
-        Instantiate(bullet, bulletParent2.transform.position, Quaternion.identity);
+        if (nextFireTime < Time.time)
+        {
+            nextFireTime = Time.time + fireRate;
+            Rigidbody2D leftTear = Instantiate(bullet, bulletParentLeft.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+            Rigidbody2D rightTear = Instantiate(bullet, bulletParentRight.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+            leftTear.AddForce(new Vector3(-1, 1, 0) * 400);
+            rightTear.AddForce(new Vector3(1, 1, 0) * 400);
+        }
     }
 
 }
