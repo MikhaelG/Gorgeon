@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Mikhaels kod
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -11,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //escape styr båda öppna och stänga menyn
         {
             if (GameIsPaused)
             {

@@ -27,53 +27,35 @@ public class Slash : MonoBehaviour
          }*/
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // Gör så att obejektet med PlayerMovement alltså spelaren tar skada om den blir berörd av denna fiende. -Mattias
-    {
-        /*  if (Input.GetKeyDown(KeyCode.G))
-          {
-              PlayerMovement enemy = collision.transform.GetComponent<PlayerMovement>();
-              if (enemy != null)
-              {
-                  // enemy.TakeDamage(damage);
-              }
-          }*/
-
-
-    }
+    
 
     public void Attack()
     {
         // animator.SetTrigger("Attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, attackRange, enemyLayer);
-        Collider2D[] hitBoss = Physics2D.OverlapCircleAll(hitbox.position, attackRange, enemyLayer);
+        Collider2D[] hitBoss = Physics2D.OverlapCircleAll(hitbox.position, attackRange, bossLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
-            //enemy take damage
+            EnemyFollowRange enemyHealth = enemy.GetComponent<EnemyFollowRange>();
+            enemyHealth.TakeDamage(damage);
         }
-
         foreach (Collider2D boss in hitBoss)
-        {/*
-               Debug.Log("We hit " + boss.name);
-               gameObject.GetComponent<Boss>().cantTouchThis= true;
-               if(cantTouchThis = false)
-               {
-                   //nothing happens
-               }
+        {
+            Debug.Log("We hit " + boss.name);
+            Boss thisBoss = boss.GetComponent<Boss>();
 
-            if (cantTouchThis = true)
+            if (thisBoss.cantTouchThis == true)
             {
-                private void OnTriggerEnter2D(Collider2D hitInfo)
-                {
-                    Boss Ramses = hitInfo.transform.GetComponent<Boss>();
-                    if (Ramses != null)
-                    {
-                        Ramses.TakeDamage(damage);
-                    }
-                } 
-            }*/
-        
-        
+                print("nothing happens");
+            }
+
+            if (thisBoss.cantTouchThis == false)
+            {
+                print("Take That");
+                thisBoss.TakeDamage(damage);
+            }
+
         }
     }
 

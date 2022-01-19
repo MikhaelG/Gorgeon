@@ -306,7 +306,7 @@ MonoBehaviour:
   rb: {fileID: 215079389}
   feet: {fileID: 96186956}
   dashDistance: 15
-  jumpClip: {fileID: 8300000, guid: 6f88c0b4646f9824abdc1d8965dadbe6, type: 3}
+  jumpClip: {fileID: 8300000, guid: a4b5fa8a0f760ef41a3722e5805c2c2a, type: 3}
   walkingClip: {fileID: 8300000, guid: 89511b7cd48efd34b9dc095ddd8499f3, type: 3}
 --- !u!1 &244037986
 GameObject:
