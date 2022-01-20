@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: b0509359d67e452408389166ac64256f
   - enabled: 1
-    path: Assets/Scenes/MikhaelScene.unity
-    guid: 57e545304dda1434988c1b396c91f224
+    path: Assets/Scenes/LevelScene.unity
+    guid: 7a2ecc94da217e54eba89895b7521b8a
   m_configObjects: {}
