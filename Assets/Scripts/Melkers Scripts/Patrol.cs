@@ -25,7 +25,7 @@ public class Patrol : MonoBehaviour
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime); //Nu kommer den att gå åt höger
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance); //(origin, direction, lenght)
+        RaycastHit2D groundInfo = Physics2D.BoxCast(groundDetection.position, new Vector2(0.25f, 0.25f), 0, Vector2.down, distance); //(origin, direction, lenght)
         if (groundInfo.collider == false) //Kollar om Raycasten kolliderar med något
         {
             if (movingRight == true) //Om vi gick åt höger, så kommer enemyn att vända sig med 180 grader
