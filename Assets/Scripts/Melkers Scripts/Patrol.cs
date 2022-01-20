@@ -18,7 +18,7 @@ public class Patrol : MonoBehaviour
 
     public Transform groundDetection;
 
-    public float hp = 2;
+    public float hp = 1000;
     
 
     void Update()
