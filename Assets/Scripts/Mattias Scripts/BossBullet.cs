@@ -8,6 +8,7 @@ public class BossBullet : MonoBehaviour
 
     public float timer;
     public float Deathcountdown = 15;
+    public Transform player;
     void Start()
     {
         rb.velocity = transform.up * speed;
@@ -19,6 +20,11 @@ public class BossBullet : MonoBehaviour
        
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
+
 }
 

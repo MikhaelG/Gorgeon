@@ -4,6 +4,13 @@ public class Boss : MonoBehaviour
 {
     public float attackcountdown = 3;
     public float attacktime;
+
+    public float restCountdown = 5;
+    public float Imdone;
+
+    public float deathcountdown = 3;
+    public float tickTock;
+
     public int damage = 1;
     public Transform FirePointT;
     public Transform FirePointM;
@@ -23,6 +30,10 @@ public class Boss : MonoBehaviour
     public bool playerTooClose = false;
     public bool isConfused = false;
     public bool cantTouchThis = true;
+
+    public GameObject newMap;
+
+    public Animator anim;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform; //Letar efter spelaren och dess transform värde. Melker
@@ -31,27 +42,32 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
+        
         attacktime += Time.deltaTime;
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
+            anim.SetTrigger("Blast");
             Shoot();
-            bossAttackAmount = +1;
+            bossAttackAmount += 1;
             attacktime = 0;
 
         }
 
-        /* if(lineofsite GameObject.FindGameObjectWithTag("Player") = true && isConfused == false)
-          {
-             // Animator.play attack animation
-             //Punch player
-
-          }*/
-
-
         if (bossweakpoint == bossAttackAmount)
         {
+            //anim.Play("Trott");
+            Debug.Log("YOLO");
             isConfused = true;
             cantTouchThis = false;
+            bossAttackAmount = 0;
+
+            Imdone += Time.deltaTime;
+            if (Imdone >= restCountdown) 
+            {
+                isConfused = false;
+                cantTouchThis = true;
+            }
+
         }
 
     }
@@ -95,12 +111,17 @@ public class Boss : MonoBehaviour
         if (isConfused == true)
         {
             BossHitPoints -= damage;
-            transform.position += new Vector3(5, 0, 0);
+            transform.position += new Vector3(3, 0, 0);
             isConfused = false;
             cantTouchThis = true;
             if (BossHitPoints <= 0)
             {
-                Destroy(gameObject);
+                tickTock += Time.deltaTime;
+                if (tickTock >= deathcountdown)
+                {
+                    newMap.SetActive(true);
+                    Destroy(gameObject);
+                }
             }
         }
 
