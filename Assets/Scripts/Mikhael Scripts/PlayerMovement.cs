@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform feet;
-    public Animator animator;
 
     int jumpCount = 0;
     bool isGrounded;
@@ -29,18 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip walkingClip;//Melker
 
-    Animator anim;
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
-
     private void Update()
     {
         mx = Input.GetAxis("Horizontal"); //a d i det fallet
-
-        animator.SetFloat("Speed", Mathf.Abs (mx));
 
         if (dashCoolDown > 0)
         {
@@ -49,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump")) //space
         {
-            anim.SetTrigger("Jump");
             AudioSource.PlayClipAtPoint(jumpClip, transform.position);//Melker
             Jump();
         }

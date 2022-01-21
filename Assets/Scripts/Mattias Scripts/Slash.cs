@@ -9,13 +9,6 @@ public class Slash : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
     public LayerMask bossLayer;
-    Animator anim;
-
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
 
 
     void Update()
@@ -23,7 +16,6 @@ public class Slash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             Attack();
-            anim.SetTrigger("Attack"); //spela attack animationen - Mikhael
         }
     }
     public void TakeDamage(int damage)
