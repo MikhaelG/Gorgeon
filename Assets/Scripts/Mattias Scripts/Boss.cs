@@ -46,7 +46,7 @@ public class Boss : MonoBehaviour
         attacktime += Time.deltaTime;
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
-            anim.SetTrigger("Blast");
+         //   anim.SetTrigger("Blast");
             Shoot();
             bossAttackAmount += 1;
             attacktime = 0;
@@ -55,7 +55,7 @@ public class Boss : MonoBehaviour
 
         if (bossweakpoint == bossAttackAmount)
         {
-            anim.SetTrigger("Trott");
+           // anim.SetTrigger("Trott");
             Debug.Log("YOLO");
             isConfused = true;
             cantTouchThis = false;
