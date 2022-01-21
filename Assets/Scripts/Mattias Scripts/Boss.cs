@@ -55,7 +55,7 @@ public class Boss : MonoBehaviour
 
         if (bossweakpoint == bossAttackAmount)
         {
-            //anim.Play("Trott");
+            anim.SetTrigger("Trott");
             Debug.Log("YOLO");
             isConfused = true;
             cantTouchThis = false;
@@ -111,7 +111,7 @@ public class Boss : MonoBehaviour
         if (isConfused == true)
         {
             BossHitPoints -= damage;
-            transform.position += new Vector3(3, 0, 0);
+            transform.position += new Vector3(5, 0, 0);
             isConfused = false;
             cantTouchThis = true;
             if (BossHitPoints <= 0)

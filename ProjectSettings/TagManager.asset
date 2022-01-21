@@ -9,6 +9,7 @@ TagManager:
   - Boss
   - Enemy
   - Ground
+  - NewTag
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Boss
   - Player
   - InvisibleWall
-  - 
+  - Water2
   - 
   - 
   - 
