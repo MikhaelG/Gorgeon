@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthTest : MonoBehaviour
 {
     public Image healthBar;
-    public float healthAmount = 3;
+    public float healthAmount = 5;
 
     public AudioClip deathClip;
 
@@ -35,7 +35,7 @@ public class HealthTest : MonoBehaviour
     public void TakeDamage (float Damage)
     {
         healthAmount -= Damage;
-        healthBar.fillAmount = healthAmount / 3;
+        healthBar.fillAmount = healthAmount / 5;
     }
 
 }
