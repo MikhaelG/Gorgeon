@@ -8,14 +8,40 @@ public class HealthTest : MonoBehaviour
     public Image healthBar;
     public float healthAmount = 10;
 
+    [SerializeField]
+    public Transform SpawnPoint;
+    public bool Respawn;
+
+    public Text respawnsLeft;
+    public int RespawnAmount;
+
     public AudioClip deathClip;
+
+    void Start()
+    {
+        RespawnAmount = 3;
+        respawnsLeft = GetComponent<Text>();
+    }
 
     void Update()
     {
+        respawnsLeft.text = RespawnAmount.ToString();
+
         if (healthAmount <= 0)
         {
             AudioSource.PlayClipAtPoint(deathClip, transform.position);
-            Destroy(this.gameObject);
+            Respawn = true;
+            RespawnAmount -= 1;
+            //Destroy(this.gameObject);
+        }
+        else
+        {
+            Respawn = false;
+        }
+
+        if (Respawn)
+        {
+            transform.position = SpawnPoint.position;
         }
 
         if (Input.GetKeyDown(KeyCode.L))

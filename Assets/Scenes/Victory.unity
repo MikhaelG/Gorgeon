@@ -524,8 +524,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Congrats for now this is all due to foolish \nmistakes. We hope that you
-    will continue \nsuporting the development om SMG4."
+  m_Text: 'Congrats on compleating the game. Go play some Clash of Clans
+
+'
 --- !u!222 &1939804170
 CanvasRenderer:
   m_ObjectHideFlags: 0
