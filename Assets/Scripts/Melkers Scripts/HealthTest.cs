@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class HealthTest : MonoBehaviour
 {
     public Image healthBar;
-    public float healthAmount = 10;
+    public float maxHealth = 10;
+    float healthAmount;
 
     [SerializeField]
     public Transform SpawnPoint;
@@ -19,8 +20,8 @@ public class HealthTest : MonoBehaviour
 
     void Start()
     {
+        healthAmount = maxHealth;
         RespawnAmount = 3;
-        respawnsLeft = GetComponent<Text>();
     }
 
     void Update()
@@ -29,10 +30,8 @@ public class HealthTest : MonoBehaviour
 
         if (healthAmount <= 0)
         {
-            AudioSource.PlayClipAtPoint(deathClip, transform.position);
-            Respawn = true;
             RespawnAmount -= 1;
-            //Destroy(this.gameObject);
+            Respawn = true;
         }
         else
         {
@@ -41,7 +40,17 @@ public class HealthTest : MonoBehaviour
 
         if (Respawn)
         {
-            transform.position = SpawnPoint.position;
+            if (RespawnAmount > 0)
+            {
+                transform.position = SpawnPoint.position;
+                healthAmount = maxHealth;
+            }
+            else
+            {
+                Destroy(gameObject);
+                AudioSource.PlayClipAtPoint(deathClip, transform.position);
+            }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.L))
