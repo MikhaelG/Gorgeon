@@ -19,13 +19,15 @@ public class Patrol : MonoBehaviour
     public Transform groundDetection;
 
     public float hp = 3;
-    
+
+    public LayerMask mask;
 
     void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime); //Nu kommer den att gå åt höger
 
-        RaycastHit2D groundInfo = Physics2D.BoxCast(groundDetection.position, new Vector2(0.25f, 0.25f), 0, Vector2.down, distance); //(origin, direction, lenght)
+        RaycastHit2D groundInfo = Physics2D.BoxCast(groundDetection.position, new Vector2(0.25f, 0.25f), 0, Vector2.down, distance,mask); //(origin, direction, lenght)
+        Debug.Log("Jag går på marken");
         if (groundInfo.collider == false) //Kollar om Raycasten kolliderar med något
         {
             if (movingRight == true) //Om vi gick åt höger, så kommer enemyn att vända sig med 180 grader
@@ -51,8 +53,8 @@ public class Patrol : MonoBehaviour
             nextFireTime = Time.time + fireRate;
             Rigidbody2D leftTear = Instantiate(bullet, bulletParentLeft.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
             Rigidbody2D rightTear = Instantiate(bullet, bulletParentRight.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
-            leftTear.AddForce(new Vector3(-1, 1, 0) * 400);
-            rightTear.AddForce(new Vector3(1, 1, 0) * 400);
+            leftTear.AddForce(new Vector3(-1, 1, 0) * 250);
+            rightTear.AddForce(new Vector3(1, 1, 0) * 250);
         }
     }
     public void TakeDamage(int damage)
