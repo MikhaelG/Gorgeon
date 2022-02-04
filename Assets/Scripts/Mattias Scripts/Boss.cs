@@ -43,7 +43,7 @@ public class Boss : MonoBehaviour
     void Update()
     {
 
-        attacktime += Time.deltaTime;
+        attacktime += Time.deltaTime; // 
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
             anim.SetTrigger("Blast");
@@ -55,7 +55,7 @@ public class Boss : MonoBehaviour
 
         Attack();
 
-        if (bossweakpoint == bossAttackAmount)
+        if (bossweakpoint <= bossAttackAmount)
         {
             anim.SetTrigger("Trott");
             Debug.Log("YOLO");
@@ -82,12 +82,15 @@ public class Boss : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, lineOfSite, playerLayer);
         foreach (Collider2D player in hitEnemies)
         {
+            playerTooClose = true;
             HealthTest playerHealth = player.GetComponent<HealthTest>();
             anim.SetTrigger("Attack");
             playerHealth.TakeDamage(damage);
             player.transform.position += new Vector3(-3, 0, 0);
             Debug.Log("We hit " + player.name);
-
+            bossAttackAmount += 1;
+            playerTooClose = false;
+            print("Attack klar");
         }
     }
 
@@ -113,10 +116,12 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+       
         if (isConfused == true)
         {
             BossHitPoints -= damage;
             transform.position += new Vector3(5, 0, 0);
+            print("kanske aj");
             isConfused = false;
             cantTouchThis = true;
             bossAttackAmount = 0;
