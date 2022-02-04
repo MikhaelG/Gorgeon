@@ -14,7 +14,7 @@ public class BlodapelsinDead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetTrigger("NamnetPÂParametern");
-        animator.SetFloat("NamnetPÂParametern", transform.position.x);
+        animator.SetTrigger("Die");
+        //animator.SetFloat("NamnetPÂParametern", transform.position.x);
     }
 }
