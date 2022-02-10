@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     public float jumpPower = 15f;
     public int extraJumps = 1;
+    public Animator animator;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform feet;
@@ -32,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     {
         mx = Input.GetAxis("Horizontal"); //a d i det fallet
 
+        animator.SetFloat("Speed", Mathf.Abs(mx));
+
         if (dashCoolDown > 0)
         {
             dashCoolDown -= Time.deltaTime;
@@ -41,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(jumpClip, transform.position);//Melker
             Jump();
+            animator.SetBool("IsJumping", true);
         }
 
         //dash åt vänster
