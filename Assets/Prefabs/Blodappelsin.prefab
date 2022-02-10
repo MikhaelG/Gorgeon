@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 2850906182494852140}
   - component: {fileID: 2850906182494852139}
   - component: {fileID: 2850906182494852138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blodappelsin
   m_TagString: Enemy
   m_Icon: {fileID: 0}

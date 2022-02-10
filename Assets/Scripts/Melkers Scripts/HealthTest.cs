@@ -28,14 +28,14 @@ public class HealthTest : MonoBehaviour
     {
         respawnsLeft.text = RespawnAmount.ToString();
 
-        if (healthAmount <= 0)
+        if (healthAmount <= 0) //Om healthAmount är mindre än 0
         {
-            RespawnAmount -= 1;
-            Respawn = true;
+            RespawnAmount -= 1; //Hur många gånger man kommer respawnas - 1
+            Respawn = true; //Man kommer respawnas
         }
         else
         {
-            Respawn = false;
+            Respawn = false; //Respawn är false, man kommer inte respawnas
         }
 
         if (Respawn)
@@ -61,16 +61,16 @@ public class HealthTest : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy") //Om man kolliderar med en gameobjekt som har tagen "Enemy"
         {
-            TakeDamage(1);
+            TakeDamage(1); //Ta 1 skada
         }
     }
 
     public void TakeDamage (float Damage)
     {
-        healthAmount -= Damage;
-        healthBar.fillAmount = healthAmount / 10;
+        healthAmount -= Damage; //Drar -1 från healthAmount
+        healthBar.fillAmount = healthAmount / 10; //
     }
 
 }

@@ -2180,10 +2180,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "L\xD6K"
       objectReference: {fileID: 0}
-    - target: {fileID: 695639213455082579, guid: f72d4172a32f2384981ac498b6154bdc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72d4172a32f2384981ac498b6154bdc, type: 3}
 --- !u!1001 &2850906181213982872
