@@ -22,6 +22,13 @@ public class Patrol : MonoBehaviour
 
     public LayerMask mask;
 
+    Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime); //Nu kommer den att gå åt höger
@@ -62,6 +69,8 @@ public class Patrol : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
+            Debug.Log("Jag dör");
+            animator.SetTrigger("Die");
             Destroy(gameObject);
         }
 

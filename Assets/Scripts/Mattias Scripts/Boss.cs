@@ -42,30 +42,34 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        
-        attacktime += Time.deltaTime;
+
+        attacktime += Time.deltaTime; // 
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
-         //   anim.SetTrigger("Blast");
+            anim.SetTrigger("Blast");
             Shoot();
             bossAttackAmount += 1;
             attacktime = 0;
 
         }
 
-        if (bossweakpoint == bossAttackAmount)
+        Attack();
+
+        if (bossweakpoint <= bossAttackAmount)
         {
-           // anim.SetTrigger("Trott");
+            anim.SetTrigger("Trott");
             Debug.Log("YOLO");
             isConfused = true;
             cantTouchThis = false;
-            bossAttackAmount = 0;
+
 
             Imdone += Time.deltaTime;
-            if (Imdone >= restCountdown) 
+            if (Imdone >= restCountdown)
             {
                 isConfused = false;
                 cantTouchThis = true;
+                bossAttackAmount = 0;
+                Imdone = 0;
             }
 
         }
@@ -74,15 +78,19 @@ public class Boss : MonoBehaviour
 
     public void Attack()
     {
-        // animator.SetTrigger("Attack");
+      
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, lineOfSite, playerLayer);
         foreach (Collider2D player in hitEnemies)
         {
-            Debug.Log("We hit " + player.name);
-            HealthTest playerHealth = player.GetComponent<HealthTest>(); //Ersätt PlayerMovement med det skript som har take dammage funktionen
-            //Animator.play attack animation
+            playerTooClose = true;
+            HealthTest playerHealth = player.GetComponent<HealthTest>();
+            anim.SetTrigger("Attack");
             playerHealth.TakeDamage(damage);
             player.transform.position += new Vector3(-3, 0, 0);
+            Debug.Log("We hit " + player.name);
+            bossAttackAmount += 1;
+            playerTooClose = false;
+            print("Attack klar");
         }
     }
 
@@ -108,18 +116,22 @@ public class Boss : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+       
         if (isConfused == true)
         {
             BossHitPoints -= damage;
             transform.position += new Vector3(5, 0, 0);
+            print("kanske aj");
             isConfused = false;
             cantTouchThis = true;
+            bossAttackAmount = 0;
+            Imdone = 0;
             if (BossHitPoints <= 0)
             {
+                anim.SetTrigger("Fall");
                 tickTock += Time.deltaTime;
                 if (tickTock >= deathcountdown)
                 {
-                    newMap.SetActive(true);
                     Destroy(gameObject);
                 }
             }
@@ -130,6 +142,6 @@ public class Boss : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, lineOfSite); //Skapar en cirkel runt om enemyn. Melker
+        Gizmos.DrawWireSphere(hitbox.position, lineOfSite); //Skapar en cirkel runt om enemyn. Melker
     }
 }
