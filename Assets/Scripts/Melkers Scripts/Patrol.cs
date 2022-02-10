@@ -18,6 +18,7 @@ public class Patrol : MonoBehaviour
 
     public Transform groundDetection;
 
+    public int damage = 1;
     public float hp = 3;
 
     public LayerMask mask;
