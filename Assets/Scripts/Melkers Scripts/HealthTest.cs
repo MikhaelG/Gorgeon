@@ -40,6 +40,7 @@ public class HealthTest : MonoBehaviour
 
         if (Respawn)
         {
+          
             if (RespawnAmount > 0)
             {
                 transform.position = SpawnPoint.position;

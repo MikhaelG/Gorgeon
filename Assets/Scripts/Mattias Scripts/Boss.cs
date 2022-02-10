@@ -11,6 +11,9 @@ public class Boss : MonoBehaviour
     public float deathcountdown = 3;
     public float tickTock;
 
+    public float magicCountdown = 1;
+    public float Tocktick;
+
     public int damage = 1;
     public Transform FirePointT;
     public Transform FirePointM;
@@ -30,20 +33,25 @@ public class Boss : MonoBehaviour
     public bool playerTooClose = false;
     public bool isConfused = false;
     public bool cantTouchThis = true;
+    public bool timeToFall = false;
 
     public GameObject newMap;
 
     public Animator anim;
+    float forcedY;
     void Start()
     {
+
+        //timetofall måste ändra eller avaktivera forcedY
+        forcedY = transform.position.y;
         player = GameObject.FindGameObjectWithTag("Player").transform; //Letar efter spelaren och dess transform värde. Melker
     }
 
 
     void Update()
     {
-
-        attacktime += Time.deltaTime; // 
+        transform.position = new Vector3(transform.position.x, forcedY, 0);
+        attacktime += Time.deltaTime; //This code makes the boss attack the player by counting to 3 and then doing the shoot command. Naturally it does not activate if something stops it. Mattias.
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
             anim.SetTrigger("Blast");
@@ -56,7 +64,7 @@ public class Boss : MonoBehaviour
         Attack();
 
         if (bossweakpoint <= bossAttackAmount)
-        {
+        { // With every attack bossattackamount increases and when it becomes the same as bossweakpoint the boss activates it's vulnarable state. Mattias
             anim.SetTrigger("Trott");
             Debug.Log("YOLO");
             isConfused = true;
@@ -85,12 +93,16 @@ public class Boss : MonoBehaviour
             playerTooClose = true;
             HealthTest playerHealth = player.GetComponent<HealthTest>();
             anim.SetTrigger("Attack");
+           if(Tocktick >= magicCountdown) 
+            { 
             playerHealth.TakeDamage(damage);
-            player.transform.position += new Vector3(-3, 0, 0);
-            Debug.Log("We hit " + player.name);
-            bossAttackAmount += 1;
-            playerTooClose = false;
-            print("Attack klar");
+            player.transform.position += new Vector3(-2, 0, 0);
+                Debug.Log("We hit " + player.name);
+                bossAttackAmount += 1;
+                print("Attack klar");
+            }
+             playerTooClose = false;
+         
         }
     }
 
@@ -128,6 +140,7 @@ public class Boss : MonoBehaviour
             Imdone = 0;
             if (BossHitPoints <= 0)
             {
+                timeToFall = true;
                 anim.SetTrigger("Fall");
                 tickTock += Time.deltaTime;
                 if (tickTock >= deathcountdown)
