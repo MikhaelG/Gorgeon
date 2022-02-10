@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BlodapelsinDead : MonoBehaviour
 {
+    //Den h‰r koden anv‰nds
+
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,5 @@ public class BlodapelsinDead : MonoBehaviour
     void Update()
     {
         animator.SetTrigger("Die");
-        //animator.SetFloat("NamnetPÂParametern", transform.position.x);
     }
 }
