@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    //OBS: Denna kod används inte
+
     public GameObject target;
     public float speed;
     public float damage;

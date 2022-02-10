@@ -10,8 +10,7 @@ public class EnemyBullet2 : MonoBehaviour
 
     void Start()
     {
-        bulletRD = GetComponent<Rigidbody2D>();
-        //bulletRD.velocity = new Vector2(moveDire.x, moveDire.y);
-        Destroy(this.gameObject, 7);
+        bulletRD = GetComponent<Rigidbody2D>();//Kallar på bulletens rigidbody
+        Destroy(this.gameObject, 7);//Förstör bullet efter 7 sekunder
     }
 }

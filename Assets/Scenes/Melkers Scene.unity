@@ -2182,7 +2182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 695639213455082579, guid: f72d4172a32f2384981ac498b6154bdc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f72d4172a32f2384981ac498b6154bdc, type: 3}
@@ -2366,6 +2366,7 @@ GameObject:
   - component: {fileID: 8128276807141840372}
   - component: {fileID: 8128276807141840377}
   - component: {fileID: 8128276807141840380}
+  - component: {fileID: 8128276807141840381}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2481,6 +2482,27 @@ MonoBehaviour:
   respawnsLeft: {fileID: 1099109340}
   RespawnAmount: 0
   deathClip: {fileID: 8300000, guid: 8703e5112b02bbf48af5f6bd214182e4, type: 3}
+--- !u!114 &8128276807141840381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128276807141840375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67961c5cc0230643bce4a09be970c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  hitbox: {fileID: 8128276807203778626}
+  attackRange: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  bossLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!23 &8128276807203778624
 MeshRenderer:
   m_ObjectHideFlags: 0
