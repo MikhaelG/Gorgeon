@@ -42,7 +42,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
 
-        //timetofall måste ändra eller avaktivera forcedY
+
         forcedY = transform.position.y;
         player = GameObject.FindGameObjectWithTag("Player").transform; //Letar efter spelaren och dess transform värde. Melker
     }
@@ -50,7 +50,11 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, forcedY, 0);
+        if (timeToFall == false)
+        {
+            transform.position = new Vector3(transform.position.x, forcedY, 0);
+        }
+        
         attacktime += Time.deltaTime; //This code makes the boss attack the player by counting to 3 and then doing the shoot command. Naturally it does not activate if something stops it. Mattias.
         if (attacktime >= attackcountdown && isConfused == false && playerTooClose == false)
         {
@@ -73,7 +77,7 @@ public class Boss : MonoBehaviour
 
             Imdone += Time.deltaTime;
             if (Imdone >= restCountdown)
-            {
+            {// This code makes the boss simply countdown until the it is time to stop being vulnarable and become invulnarable again by activating a few bools. Mattias
                 isConfused = false;
                 cantTouchThis = true;
                 bossAttackAmount = 0;
