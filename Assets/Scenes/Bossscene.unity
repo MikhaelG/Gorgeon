@@ -377,14 +377,14 @@ RectTransform:
   m_GameObject: {fileID: 487527281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.9169855, y: 2.9169855, z: 2.9169855}
   m_Children: []
   m_Father: {fileID: 57994326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -641, y: 389}
+  m_AnchoredPosition: {x: -641, y: 466.8}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487527283
@@ -796,6 +796,8 @@ MonoBehaviour:
   Imdone: 0
   deathcountdown: 3
   tickTock: 0
+  magicCountdown: 1
+  Tocktick: 0
   damage: 1
   FirePointT: {fileID: 1111377753}
   FirePointM: {fileID: 1438015398}
@@ -812,6 +814,7 @@ MonoBehaviour:
   playerTooClose: 0
   isConfused: 0
   cantTouchThis: 1
+  timeToFall: 0
   newMap: {fileID: 1773273944}
   anim: {fileID: 750782324}
 --- !u!61 &750782326
