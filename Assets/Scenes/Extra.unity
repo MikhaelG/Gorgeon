@@ -2517,6 +2517,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1300442916, guid: f9322534da590c243a49d44328fb89bc, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1346734888}
     - target: {fileID: 1300442917, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: m_Controller
       value: 
@@ -11098,6 +11102,7 @@ MonoBehaviour:
   bulletParentLeft: {fileID: 695639212511816438}
   fireRate: 1
   groundDetection: {fileID: 695639212563858440}
+  damage: 1
   hp: 2
   mask:
     serializedVersion: 2
@@ -11516,6 +11521,7 @@ MonoBehaviour:
   bulletParentLeft: {fileID: 0}
   fireRate: 1
   groundDetection: {fileID: 930359688607907460}
+  damage: 1
   hp: 2
   mask:
     serializedVersion: 2

@@ -9,6 +9,7 @@ public class Slash : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
     public LayerMask bossLayer;
+    public Animator animator;
 
 
     void Update()
@@ -16,6 +17,7 @@ public class Slash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             Attack();
+            animator.SetBool("IsAttacking", true);
         }
     }
     public void TakeDamage(int damage)
