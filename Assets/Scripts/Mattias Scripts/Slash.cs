@@ -34,16 +34,10 @@ public class Slash : MonoBehaviour
         // animator.SetTrigger("Attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, attackRange, enemyLayer);
         Collider2D[] hitBoss = Physics2D.OverlapCircleAll(hitbox.position, attackRange, bossLayer);
-        foreach (Collider2D enemy1 in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit " + enemy1.name);
-            EnemyFollowRange enemyHealth = enemy1.GetComponent<EnemyFollowRange>();
-            enemyHealth.TakeDamage(damage);
-        }
-        foreach (Collider2D enemy2 in hitEnemies)
-        {
-            Debug.Log("We hit " + enemy2.name);
-            Patrol enemyHealth = enemy2.GetComponent<Patrol>();
+            Debug.Log("We hit " + enemy.name); 
+            Patrol enemyHealth = enemy.GetComponent<Patrol>();
             enemyHealth.TakeDamage(damage);
         }
         foreach (Collider2D boss in hitBoss)

@@ -44,8 +44,8 @@ public class EnemyFollowRange : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        hp -= damage;
-        if (hp <= 0)
+        hp -= damage; //Liv -1
+        if (hp <= 0)//När hp är mindre än 0
         {
             Destroy(gameObject);
         }

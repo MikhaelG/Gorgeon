@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 695639213455082572}
   - component: {fileID: 695639212942340908}
   - component: {fileID: 695639213455082575}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "L\xD6K"
   m_TagString: Enemy
   m_Icon: {fileID: 0}

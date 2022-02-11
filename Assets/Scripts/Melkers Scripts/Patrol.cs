@@ -18,6 +18,7 @@ public class Patrol : MonoBehaviour
 
     public Transform groundDetection;
 
+    public int damage = 1;
     public float hp = 3;
 
     public LayerMask mask;
@@ -57,11 +58,11 @@ public class Patrol : MonoBehaviour
     {
         if (nextFireTime < Time.time)
         {
-            nextFireTime = Time.time + fireRate;
-            Rigidbody2D leftTear = Instantiate(bullet, bulletParentLeft.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
-            Rigidbody2D rightTear = Instantiate(bullet, bulletParentRight.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
-            leftTear.AddForce(new Vector3(-1, 1, 0) * 250);
-            rightTear.AddForce(new Vector3(1, 1, 0) * 250);
+            nextFireTime = Time.time + fireRate;//Gör så att Löken inte spammar tårar oändligt
+            Rigidbody2D leftTear = Instantiate(bullet, bulletParentLeft.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();//Skapar en bullet vid bulletParentLeft med ingen rotation
+            Rigidbody2D rightTear = Instantiate(bullet, bulletParentRight.transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();//Skapar en bullet vid bulletParentRight med ingen rotation
+            leftTear.AddForce(new Vector3(-1, 1, 0) * 250); //Gör så att tårarna flyger i en riktning som en regnbåge åt vänster
+            rightTear.AddForce(new Vector3(1, 1, 0) * 250); //Gör så att tårarna flyger i en riktning som en regnbåge åt höger
         }
     }
     public void TakeDamage(int damage)
@@ -70,7 +71,7 @@ public class Patrol : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("Jag dör");
-            animator.SetTrigger("Die");
+            animator.SetTrigger("Die");//Spela animationen "Die" som både gäller för Blodappelsinen och Löken
             Destroy(gameObject);
         }
 
