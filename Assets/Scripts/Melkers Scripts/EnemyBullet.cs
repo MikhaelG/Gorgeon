@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Melker
 public class EnemyBullet : MonoBehaviour
 {
     //OBS: Denna kod används inte

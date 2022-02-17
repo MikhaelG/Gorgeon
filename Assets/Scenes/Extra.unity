@@ -10214,11 +10214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2850906182494852142, guid: 1ff2a10a0eb4c594a81d3399d3131870, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.586464
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2850906182494852142, guid: 1ff2a10a0eb4c594a81d3399d3131870, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9450357
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 2850906182494852142, guid: 1ff2a10a0eb4c594a81d3399d3131870, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11207,7 +11207,7 @@ GameObject:
   - component: {fileID: 695639212287488256}
   - component: {fileID: 695639213938984544}
   - component: {fileID: 695639212287488259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "L\xD6K 2.0"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -11317,7 +11317,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0023136437, y: 0.0029229969}
+  m_Offset: {x: -0.0023135953, y: -0.0033590198}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11328,7 +11328,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49562806, y: 0.5966208}
+  m_Size: {x: 0.23178756, y: 0.2573974}
   m_EdgeRadius: 0
 --- !u!1 &930359688191729588
 GameObject:
@@ -11452,7 +11452,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0023136437, y: 0.0029229969}
+  m_Offset: {x: -0.03858322, y: -0.004714206}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11463,7 +11463,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49562806, y: 0.5966208}
+  m_Size: {x: 0.10875285, y: 0.16894081}
   m_EdgeRadius: 0
 --- !u!1 &930359689207218547
 GameObject:
@@ -11478,7 +11478,7 @@ GameObject:
   - component: {fileID: 930359689207218550}
   - component: {fileID: 930359689207218545}
   - component: {fileID: 930359689207218544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blodappelsin 2.0
   m_TagString: Enemy
   m_Icon: {fileID: 0}

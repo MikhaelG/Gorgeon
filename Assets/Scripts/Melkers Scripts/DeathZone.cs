@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Melker
 public class DeathZone : MonoBehaviour
 {
     //OBS: Denna kod används inte

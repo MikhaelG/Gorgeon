@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Melker
 public class Pendelum : MonoBehaviour
 {
     Rigidbody2D rb2d;//Reference till rigidbody

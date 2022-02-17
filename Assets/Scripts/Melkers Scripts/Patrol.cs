@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Melker
 public class Patrol : MonoBehaviour
 {
     public float speed;
@@ -72,7 +72,7 @@ public class Patrol : MonoBehaviour
         {
             Debug.Log("Jag dör");
             animator.SetTrigger("Die");//Spela animationen "Die" som både gäller för Blodappelsinen och Löken
-            Destroy(gameObject);
+            Destroy(gameObject, 1);
         }
 
     }
