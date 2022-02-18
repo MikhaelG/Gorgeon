@@ -27,7 +27,12 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip jumpClip;//Melker
 
-    public AudioClip walkingClip;//Melker
+    AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -50,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         //dash åt vänster
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.A && dashCoolDown <= 0)
+            if (doubleTapTime > Time.time && lastKeyCode == KeyCode.A && dashCoolDown <= 0) //ifall man dubbeltrycker på A (samma med D) så blir dash cooldown resettad
             {
                 StartCoroutine(Dash(-1f));
             } else
@@ -58,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-            AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
+            //AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
 
             lastKeyCode = KeyCode.A;
         }
@@ -75,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-            AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
+            //AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
 
             lastKeyCode = KeyCode.D;
 
@@ -91,13 +96,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
         rb.velocity = new Vector2(mx * speed, rb.velocity.y);
+        if (Mathf.Abs(mx) >= 0.05f && !source.isPlaying) //ifall hastigheten är mer eller lika med 0.05 och den inte spelas så börjar den spelas
+        {
+            source.Play();
+        }
     }
 
     void Jump ()
     {
         if (isGrounded || jumpCount < extraJumps)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower); //när man är på marken så får man en till hopp
             jumpCount++;
         }
     }
