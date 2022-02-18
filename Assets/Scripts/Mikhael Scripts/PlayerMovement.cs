@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform feet;
 
     int jumpCount = 0;
-    bool isGrounded;
+    public bool isGrounded;
     float mx;
     float jumpCoolDown;
 

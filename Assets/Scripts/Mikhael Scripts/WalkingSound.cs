@@ -1,18 +1,18 @@
 using UnityEngine;
 using System.Collections;
-
+//Mikhael
 public class WalkingSound : MonoBehaviour
 {
 
-    CharacterController cc;
+    PlayerMovement cc;
     void Start()
     {
-        cc = GetComponent<CharacterController>();
+        cc = GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
-        if (cc.isGrounded == true && cc.velocity.magnitude > 2f && GetComponent<AudioSource>().isPlaying == false)
+        if (cc.isGrounded == true && cc.speed > 2f && GetComponent<AudioSource>().isPlaying == false)
         {
             GetComponent<AudioSource>().Play();
         }
