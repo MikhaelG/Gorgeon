@@ -7,6 +7,6 @@ public class SwitchScene : MonoBehaviour
 {
     public void LoadScene ()
     {
-        SceneManager.LoadScene("Extra");
+        SceneManager.LoadScene("MenuScene");
     }
 }

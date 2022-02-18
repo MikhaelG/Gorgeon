@@ -2629,7 +2629,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.141
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8128276806999330881, guid: f9322534da590c243a49d44328fb89bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9322534da590c243a49d44328fb89bc, type: 3}
 --- !u!1 &1346734884 stripped
 GameObject:
@@ -2641,6 +2642,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1300442917, guid: f9322534da590c243a49d44328fb89bc, type: 3}
   m_PrefabInstance: {fileID: 1346734883}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1346734890
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346734884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.09, y: 0.25}
+  m_Direction: 0
 --- !u!61 &1375287864
 BoxCollider2D:
   m_ObjectHideFlags: 0
