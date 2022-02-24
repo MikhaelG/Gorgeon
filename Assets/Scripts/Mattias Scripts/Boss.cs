@@ -93,12 +93,12 @@ public class Boss : MonoBehaviour
       
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, lineOfSite, playerLayer);
         foreach (Collider2D player in hitEnemies)
-        {
+        {//This entire code uses colliders in a way i cannot remeber how it works. Mattias
             playerTooClose = true;
             HealthTest playerHealth = player.GetComponent<HealthTest>();
             anim.SetTrigger("Attack");
            if(Tocktick >= magicCountdown) 
-            { 
+            { // another countdown. Mattias
             playerHealth.TakeDamage(damage);
             player.transform.position += new Vector3(-2, 0, 0);
                 Debug.Log("We hit " + player.name);
@@ -112,7 +112,7 @@ public class Boss : MonoBehaviour
 
     void Shoot()
     {
-
+        //This code makes the boss randomly select which of it's three fire points it is going to shoot from. Mattias
         int random = Random.Range(0, 3);
         if (random == 0)
         {
@@ -143,12 +143,12 @@ public class Boss : MonoBehaviour
             bossAttackAmount = 0;
             Imdone = 0;
             if (BossHitPoints <= 0)
-            {
+            {// If the boss runs out of hp his falling animation begins playing and he falls of a cliff.
                 timeToFall = true;
                 anim.SetTrigger("Fall");
                 tickTock += Time.deltaTime;
                 if (tickTock >= deathcountdown)
-                {
+                {//Yet another Timer this one simply making sure we can see the boss begin to fall.
                     Destroy(gameObject);
                 }
             }
@@ -157,7 +157,7 @@ public class Boss : MonoBehaviour
     }
 
     public void OnDrawGizmosSelected()
-    {
+    {//Creates the gizmo that he uses when he physicaly attacks. Mattias. 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(hitbox.position, lineOfSite); //Skapar en cirkel runt om enemyn. Melker
     }
