@@ -43,7 +43,7 @@ public class Boss : MonoBehaviour
     {
 
 
-        forcedY = transform.position.y;
+        forcedY = transform.position.y; // Makes sure the boss don't begin to randomly float and get stuck on the ceiling. Mattias
         player = GameObject.FindGameObjectWithTag("Player").transform; //Letar efter spelaren och dess transform värde. Melker
     }
 
@@ -51,7 +51,7 @@ public class Boss : MonoBehaviour
     void Update()
     {
         if (timeToFall == false)
-        {
+        {// Makes sure Y is reactivated so the boss can fall. Mattias
             transform.position = new Vector3(transform.position.x, forcedY, 0);
         }
         

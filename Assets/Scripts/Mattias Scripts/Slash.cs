@@ -15,29 +15,29 @@ public class Slash : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
-        {
+        {// If you press G the player will attack. Mattias
             Attack();
             animator.SetBool("IsAttacking", true);
         }
     }
-    public void TakeDamage(int damage)
+    /* public void TakeDamage(int damage)
     {
-        /* hp -= damage;
+        hp -= damage;
          if (hp <= 0)
          {
              SceneManager.LoadScene("DeathScreen");
-         }*/
-    }
+         }
+    }*/
 
     
 
     public void Attack()
     {
-        // animator.SetTrigger("Attack");
+        
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, attackRange, enemyLayer);
         Collider2D[] hitBoss = Physics2D.OverlapCircleAll(hitbox.position, attackRange, bossLayer);
         foreach (Collider2D enemy in hitEnemies)
-        {
+        {// Still don't remeber how these collider codes work. Mattias
             Debug.Log("We hit " + enemy.name); 
             Patrol enemyHealth = enemy.GetComponent<Patrol>();
             enemyHealth.TakeDamage(damage);
