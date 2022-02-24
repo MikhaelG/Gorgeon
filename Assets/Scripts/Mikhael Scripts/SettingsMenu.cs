@@ -14,7 +14,7 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.SetFloat("volume", volume); //vi exposar value i volume mixer och på så sätt kan vi byta den med slidern
     }
 
-    public void SetFullscreen (bool isFullscreen)
+    public void SetFullscreen (bool isFullscreen) //bool kollar efter om det är full screen
     {
         Screen.fullScreen = isFullscreen; 
     }
