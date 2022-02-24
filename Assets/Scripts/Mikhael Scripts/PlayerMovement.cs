@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] Transform feet;
+    [SerializeField] Transform feet; //det som kommer kolla ifall spelaren är på marken
 
     int jumpCount = 0;
     public bool isGrounded;
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        mx = Input.GetAxis("Horizontal"); //a d i det fallet
+        mx = Input.GetAxis("Horizontal"); //a, d i det fallet
 
         animator.SetFloat("Speed", Mathf.Abs(mx));
 
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(jumpClip, transform.position);//Melker
             Jump();
-            animator.SetBool("IsJumping", true);
+            animator.SetBool("IsJumping", true); //gör så att animationen spelas
         }
 
         //dash åt vänster
@@ -63,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-            //AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
 
             lastKeyCode = KeyCode.A;
         }
@@ -80,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
                 doubleTapTime = Time.time + 0.5f;
             }
 
-            //AudioSource.PlayClipAtPoint(walkingClip, transform.position);//Melker
 
             lastKeyCode = KeyCode.D;
 
@@ -130,12 +128,12 @@ public class PlayerMovement : MonoBehaviour
 
    IEnumerator Dash (float direction)
     {
-        dashCoolDown = 3;
+        dashCoolDown = 3; //3 sekunders cooldown
         isDashing = true;
         rb.velocity = new Vector2(rb.velocity.x, 0f);
-        rb.AddForce(new Vector2(dashDistance * direction, 0f), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(dashDistance * direction, 0f), ForceMode2D.Impulse); //dashdistance i det fallet är 15  
         float gravity = rb.gravityScale;
-        rb.gravityScale = 0;
+        rb.gravityScale = 0; //gravity när man dashar
         yield return new WaitForSeconds(0.4f);
         isDashing = false;
         rb.gravityScale = gravity;
