@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 487527284}
   - component: {fileID: 487527283}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HealthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,14 +377,14 @@ RectTransform:
   m_GameObject: {fileID: 487527281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9169855, y: 2.9169855, z: 2.9169855}
+  m_LocalScale: {x: 0.7799425, y: 2.9169855, z: 2.9169855}
   m_Children: []
   m_Father: {fileID: 57994326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -641, y: 466.8}
+  m_AnchoredPosition: {x: -143, y: 86}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487527283
@@ -5318,15 +5318,15 @@ PrefabInstance:
     - target: {fileID: 1346734885, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 487527283}
     - target: {fileID: 1346734885, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: SpawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 841713403}
     - target: {fileID: 1346734885, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: respawnsLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1941260151}
     - target: {fileID: 1346734886, guid: f9322534da590c243a49d44328fb89bc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5977,7 +5977,7 @@ GameObject:
   - component: {fileID: 1941260152}
   - component: {fileID: 1941260151}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RespawnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5999,7 +5999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -525}
+  m_AnchoredPosition: {x: -144, y: 27}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1941260151
@@ -6015,7 +6015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6024,18 +6024,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 3
 --- !u!222 &1941260152
 CanvasRenderer:
   m_ObjectHideFlags: 0

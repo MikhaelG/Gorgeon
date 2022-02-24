@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: b0509359d67e452408389166ac64256f
   - enabled: 1
-    path: Assets/Scenes/Extra.unity
-    guid: 42f4a73ccfb8993479aaa589923f1e98
+    path: Assets/Scenes/BestScene.unity
+    guid: ba293404889dde2429ec653328140f9a
   - enabled: 1
     path: Assets/Scenes/Bossscene.unity
     guid: b90005e990b10ee49a29f67f9c5c32d4
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: e9b51376ab21e9748b7d8af2f835f988
+  - enabled: 1
+    path: Assets/Scenes/Extra.unity
+    guid: 42f4a73ccfb8993479aaa589923f1e98
   m_configObjects: {}
