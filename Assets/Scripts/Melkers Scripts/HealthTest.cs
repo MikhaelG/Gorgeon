@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 //Melker
 public class HealthTest : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class HealthTest : MonoBehaviour
             else
             {
                 Destroy(gameObject);//Förstör objektet
+                SceneManager.LoadScene("GameOverScene");
                 AudioSource.PlayClipAtPoint(deathClip, transform.position);//Spela ett audio clip
             }
             
