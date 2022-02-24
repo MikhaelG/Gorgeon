@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //escape styr båda öppna och stänga menyn
+        if (Input.GetKeyDown(KeyCode.Escape)) //escape styr både öppna och stänga menyn
         {
             if (GameIsPaused)
             {
@@ -27,14 +27,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume ()
     {
-        pauseMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(false); //motsatta från pause
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     void Pause ()
     {
-        pauseMenuUI.SetActive(true);
+        pauseMenuUI.SetActive(true); //ifall pausemenu aktiveras så blir spelet pausad 
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
