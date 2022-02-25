@@ -6,8 +6,8 @@ public class Transition : MonoBehaviour
     public GameObject currentRoom;
     public GameObject formerRoom;
     public GameObject player;
-    public GameObject NewRespawn;
-    public GameObject LastRespawn;
+    public Transform NewRespawn;
+    
 
 
     private void Update()
@@ -22,8 +22,7 @@ public class Transition : MonoBehaviour
             currentRoom.SetActive(true);
             player.transform.position = player.transform.position + new Vector3(2, 0, 0);
             formerRoom.SetActive(false);
-            NewRespawn.SetActive(true);
-            LastRespawn.SetActive(false);
+            collision.GetComponent<HealthTest>().SpawnPoint = NewRespawn;
         }
     }
 }
