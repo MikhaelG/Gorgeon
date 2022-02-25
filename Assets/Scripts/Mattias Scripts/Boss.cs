@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {
     public float attackcountdown = 3;
@@ -93,7 +93,7 @@ public class Boss : MonoBehaviour
       
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitbox.position, lineOfSite, playerLayer);
         foreach (Collider2D player in hitEnemies)
-        {//This entire code uses colliders in a way i cannot remeber how it works. Mattias
+        {//This entire code uses colliders in a way i cannot remember how it works. Mattias
             playerTooClose = true;
             HealthTest playerHealth = player.GetComponent<HealthTest>();
             anim.SetTrigger("Attack");
@@ -134,7 +134,7 @@ public class Boss : MonoBehaviour
     {
        
         if (isConfused == true)
-        {
+        {//If the boss is stunned from using too many attacks when he strikes he will take damage and move 5 to the right. Mattias
             BossHitPoints -= damage;
             transform.position += new Vector3(5, 0, 0);
             print("kanske aj");
@@ -142,13 +142,14 @@ public class Boss : MonoBehaviour
             cantTouchThis = true;
             bossAttackAmount = 0;
             Imdone = 0;
-            if (BossHitPoints <= 0)
+            if (BossHitPoints >= 0)
             {// If the boss runs out of hp his falling animation begins playing and he falls of a cliff.
                 timeToFall = true;
                 anim.SetTrigger("Fall");
                 tickTock += Time.deltaTime;
                 if (tickTock >= deathcountdown)
                 {//Yet another Timer this one simply making sure we can see the boss begin to fall.
+                    SceneManager.LoadScene(4);
                     Destroy(gameObject);
                 }
             }

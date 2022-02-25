@@ -48,12 +48,12 @@ public class Slash : MonoBehaviour
             Boss thisBoss = boss.GetComponent<Boss>();
 
             if (thisBoss.cantTouchThis == true)
-            {
+            {//If the player attacks while the boss is invulnarable nothing happens. Mattias
                 print("nothing happens");
             }
 
             if (thisBoss.cantTouchThis == false)
-            {
+            {//If the boss isn't invulnarable it will take damage.
                 print("Take That");
                 thisBoss.TakeDamage(damage);
             }
